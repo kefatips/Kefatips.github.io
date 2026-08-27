@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KEFA TIPS</title>
+<style>
+body{background:#111;color:#fff;font-family:Arial;padding:12px}
+.card{background:#222;border-radius:12px;padding:12px;margin:12px 0}
+.vip{background:#fff;color:#000;border-radius:10px;padding:12px;white-space:pre-line;min-height:100px;font-weight:bold}
+.orange{background:#ff6a00;border-radius:12px;padding:12px}
+.btn{background:#0088cc;color:#fff;padding:14px;width:100%;border:none;border-radius:8px;font-weight:bold;font-size:16px}
+</style>
+</head>
+<body>
+<div class="card" style="border:2px solid gold">
+<h2>💎 VIP - TODAY'S GAMES</h2>
+<div class="vip" id="games">Loading...</div>
+<small style="color:#aaa">Edit gist to update automatically</small>
+</div>
+<div class="orange">
+<h3>🔓 JOIN VIP - KES 1000</h3>
+<p><b>TILL: 0119912568</b><br>KEFA TIPS LTD</p>
+<p style="font-size:14px">1. Lipa 1000 kwa Till<br>2. Screenshot hapa Telegram</p>
+<a href="https://t.me/+16893612526" style="text-decoration:none">
+<button class="btn">✈️ TEXT ME ON TELEGRAM - +1 (689) 361-2526</button>
+</a>
+</div>
+<script>
+const URL="https://gist.githubusercontent.com/kefatips/7122a0f2502b04e8526fc3deb46cc333/raw/Games.txt";
+async function load(){
+ try{
+  let r=await fetch(URL+"?t="+Date.now());
+  let t=await r.text();
+  document.getElementById("games").innerText=t;
+ }catch(e){
+  document.getElementById("games").innerText="Check internet";
+ }
+}
+load();
+</script>
+</body>
+</html>
